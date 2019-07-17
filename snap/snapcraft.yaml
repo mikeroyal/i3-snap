@@ -97,12 +97,12 @@ parts:
         plugin: dump
         source: xwayland
         
-   - on amd64: http://http.us.debian.org/debian/i3_4.16.1-1_amd64.deb
+   - on amd64: https://http.us.debian.org/debian/i3_4.16.1-1_amd64.deb
     source-type: deb
     override-build: |
       ARCHITECTURE=$(dpkg --print-architecture)
       if [ "${ARCHITECTURE}" = "amd64" ]; then
-        DEB_API="http://http.us.debian.org/debian/i3_4.16.1-1_amd64.deb"
+        DEB_API="https://http.us.debian.org/debian/i3_4.16.1-1_amd64.deb"
       else
         echo "ERROR! i3 only produces debs for i386 or amd64. Failing the build here."
         exit 1
